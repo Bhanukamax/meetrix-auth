@@ -1,8 +1,10 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 const app = express();
 const port = 4000;
 
+app.use(cors());
 app.post("/auth", async (req, res) => {
   if (!req.header("Authorization")) return res.send(400);
 
